@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Webseite in separatem Chrome starten",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:5500",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "Webserver starten",
+      "userDataDir": "${workspaceFolder}/.chrome-debug-profile",
+      "runtimeArgs": [
+        "--new-window",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--disable-default-apps",
+        "--disable-session-crashed-bubble"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projekte – PixelSeite</title>
+<meta name="description" content="Ausgewählte Webprojekte von PixelSeite – Landingpages, Business-Webseiten, Onlineshops und Portfolios.">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img src="images/logo.svg" alt="PixelSeite Logo">Pixel<span>Seite</span></a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="projekte.html" class="active">Projekte</a></li>
+        <li><a href="ueber-mich.html">Über mich</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="kontakt.html" class="nav-cta">Projekt anfragen</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="about-hero">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Projekte</span>
+        <h1 class="section-title">Eine Auswahl meiner Arbeiten</h1>
+        <p class="section-intro" style="margin: 0 auto;">Hier entstehen nach und nach echte Kundenprojekte. Die folgenden Beispiele zeigen, welche Arten von Webseiten ich umsetze – von der einfachen Landingpage bis zum kompletten Firmenauftritt.</p>
+      </div>
+
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">Alle</button>
+        <button class="filter-btn" data-filter="landingpage">Landingpages</button>
+        <button class="filter-btn" data-filter="business">Business</button>
+        <button class="filter-btn" data-filter="shop">Onlineshops</button>
+        <button class="filter-btn" data-filter="portfolio">Portfolios</button>
+      </div>
+      <div class="gallery-filters" style="margin-top: 0.8rem;">
+        <button class="filter-btn active" data-filter-pages="all">Alle Seiten</button>
+        <button class="filter-btn" data-filter-pages="onepager">Nur Onepager</button>
+        <button class="filter-btn" data-filter-pages="mehrseitig">Nur mehrseitig</button>
+      </div>
+
+      <!--
+        Tipp: Sobald du echte Screenshots hast, ersetze <div class="placeholder-art">…</div>
+        durch <div class="thumb"><img loading="lazy" src="images/projekt-xy.jpg" alt="…"></div>
+        und entferne die Klasse "no-zoom" vom .gallery-item – dann öffnet sich die Lightbox.
+      -->
+      <!--
+        Alle 9 Karten unten sind echte, klickbare Links zu live gehosteten Webseiten:
+        - 8 Musterprojekte: gebaut in repos/Meine Apps/pixelseite-musterprojekte/<ordner>/,
+          gehostet via GitHub Pages unter https://hafner312.github.io/pixelseite-musterprojekte/<ordner>/
+        - 1 echtes Kundenprojekt (diamoon-art.ch)
+      -->
+      <div class="gallery-grid" id="galleryGrid">
+        <a class="gallery-item no-zoom" data-cat="business" data-pages="mehrseitig" href="https://hafner312.github.io/pixelseite-musterprojekte/handwerk/" target="_blank" rel="noopener" style="cursor:pointer;">
+          <div class="placeholder-art">Schreinerei Bergmann<span class="pages-badge">Mehrseitig</span></div>
+          <div class="item-body">
+            <div class="item-tag">Business</div>
+            <h3>Handwerksbetrieb</h3>
+            <p>Firmenseite für eine Schreinerei mit eigenen Unterseiten für Leistungen, Referenzen, Über uns und Kontakt.</p>
+          </div>
+        </a>
+        <a class="gallery-item no-zoom" data-cat="landingpage" data-pages="onepager" href="https://hafner312.github.io/pixelseite-musterprojekte/produktlaunch/" target="_blank" rel="noopener" style="cursor:pointer;">
+          <div class="placeholder-art">NOVA<span class="pages-badge">Onepager</span></div>
+          <div class="item-body">
+            <div class="item-tag">Landingpage</div>
+            <h3>Produkt-Launch</h3>
+            <p>Landingpage für den Launch eines smarten Beleuchtungssystems, mit Warteliste.</p>
+          </div>
+        </a>
+        <a class="gallery-item no-zoom" data-cat="portfolio" data-pages="mehrseitig" href="https://www.diamoon-art.ch/index.html" target="_blank" rel="noopener" style="cursor:pointer;">
+          <div class="placeholder-art">diamoon-art<span class="pages-badge">Mehrseitig</span></div>
+          <div class="item-body">
+            <div class="item-tag">Portfolio · Live-Projekt</div>
+            <h3>Kunst-Portfolio</h3>
+            <p>Auftritt für eine Malerin und Zeichnerin – Startseite mit Einblick in Stil und Werke.</p>
+          </div>
+        </a>
+        <a class="gallery-item no-zoom" data-cat="portfolio" data-pages="onepager" href="https://hafner312.github.io/pixelseite-musterprojekte/fotograf/" target="_blank" rel="noopener" style="cursor:pointer;">
+          <div class="placeholder-art">Fotograf:in<span class="pages-badge">Onepager</span></div>
+          <div class="item-body">
+            <div class="item-tag">Portfolio</div>
+            <h3>Fotograf:in</h3>
+            <p>Bildstarke Portfolio-Seite mit Galerie, die die Arbeiten in den Mittelpunkt stellt.</p>
+          </div>
+        </a>
+        <a class="gallery-item no-zoom" data-cat="shop" data-pages="onepager" href="https://hafner312.github.io/pixelseite-musterprojekte/shop-lokal/" target="_blank" rel="noopener" style="cursor:pointer;">
+          <div class="placeholder-art">Kramladen Nussbaum<span class="pages-badge">Onepager</span></div>
+          <div class="item-body">
+            <div class="item-tag">Onlineshop</div>
+            <h3>Kleiner Laden</h3>
+            <p>Produktübersicht für einen lokalen Laden, Bestellung über ein eingebundenes Shop-Tool wie Shopify.</p>
+          </div>
+        </a>
+        <a class="gallery-item no-zoom" data-cat="business" data-pages="onepager" href="https://hafner312.github.io/pixelseite-musterprojekte/restaurant/" target="_blank" rel="noopener" style="cursor:pointer;">
+          <div class="placeholder-art">Via Verde<span class="pages-badge">Onepager</span></div>
+          <div class="item-body">
+            <div class="item-tag">Business</div>
+            <h3>Restaurant & Café</h3>
+            <p>Appetitliche Seite mit Speisekarte, Öffnungszeiten und Reservierung.</p>
+          </div>
+        </a>
+        <a class="gallery-item no-zoom" data-cat="landingpage" data-pages="onepager" href="https://hafner312.github.io/pixelseite-musterprojekte/event/" target="_blank" rel="noopener" style="cursor:pointer;">
+          <div class="placeholder-art">Digital Summit<span class="pages-badge">Onepager</span></div>
+          <div class="item-body">
+            <div class="item-tag">Landingpage</div>
+            <h3>Event-Seite</h3>
+            <p>Kompakte Seite mit Programm, Speaker-Übersicht und Ticket-Verkauf.</p>
+          </div>
+        </a>
+        <a class="gallery-item no-zoom" data-cat="business" data-pages="mehrseitig" href="https://hafner312.github.io/pixelseite-musterprojekte/praxis/" target="_blank" rel="noopener" style="cursor:pointer;">
+          <div class="placeholder-art">Physio Bewegt<span class="pages-badge">Mehrseitig</span></div>
+          <div class="item-body">
+            <div class="item-tag">Business</div>
+            <h3>Arzt- oder Therapiepraxis</h3>
+            <p>Vertrauenswürdige Seite mit eigenen Unterseiten für Behandlungen, Team und Kontakt/Terminanfrage.</p>
+          </div>
+        </a>
+        <a class="gallery-item no-zoom" data-cat="shop" data-pages="onepager" href="https://hafner312.github.io/pixelseite-musterprojekte/shop-marke/" target="_blank" rel="noopener" style="cursor:pointer;">
+          <div class="placeholder-art">LUNARIS<span class="pages-badge">Onepager</span></div>
+          <div class="item-body">
+            <div class="item-tag">Onlineshop</div>
+            <h3>Eigenmarke</h3>
+            <p>Stilvoller, minimalistischer Markenshop – Verkauf über ein eingebundenes Shop-Tool.</p>
+          </div>
+        </a>
+      </div>
+
+      <p class="gallery-empty" id="galleryEmpty">In dieser Kategorie sind bald Projekte zu sehen – schau später nochmal vorbei!</p>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="container">
+      <div class="cta-band">
+        <h2>Wird dein Projekt das nächste hier?</h2>
+        <p>Lass uns über deine Webseite sprechen – ich freue mich darauf, deine Idee umzusetzen.</p>
+        <a href="kontakt.html" class="btn btn-primary">Projekt anfragen →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">PixelSeite</div>
+      <ul class="footer-nav">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="projekte.html">Projekte</a></li>
+        <li><a href="ueber-mich.html">Über mich</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <p class="footer-bottom">&copy; 2026 PixelSeite · Schweiz · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

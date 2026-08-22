@@ -1,0 +1,12 @@
+{
+  "name": "pixelseite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Statische Website für PixelSeite – wird mit F5 in einem separaten Chrome-Fenster gestartet.",
+  "scripts": {
+    "start": "http-server . -p 5500 -c-1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

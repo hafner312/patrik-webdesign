@@ -1,0 +1,13 @@
+# Abhängigkeiten & Debug-Profil
+node_modules/
+.chrome-debug-profile/
+
+# Betriebssystem
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+
+# Nicht verwendete Bilder / Arbeitsdateien
+images/unused/
