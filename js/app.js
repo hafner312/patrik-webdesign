@@ -171,7 +171,7 @@ if (galleryImages.length) {
 
   galleryImages.forEach(img => {
     const item = img.closest('.gallery-item');
-    if (item) {
+    if (item && !item.classList.contains('no-zoom')) {
       item.addEventListener('click', () => openLightbox(img));
     }
   });
