@@ -330,9 +330,10 @@ ul { list-style: none; margin: 0; padding: 0; }
 .product-tile {
   height: 170px;
   overflow: hidden;
+  background: var(--color-cream-alt);
 }
 
-.product-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.product-tile img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
 .product-body {
   padding: 22px 22px 24px;
