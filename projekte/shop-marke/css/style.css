@@ -276,6 +276,26 @@ button {
   margin: 0 0 2.6rem;
 }
 
+.hero-visual {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+}
+
+.hero-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--black, #0a0a0a) 0%, rgba(10, 10, 10, 0.75) 35%, rgba(10, 10, 10, 0.15) 65%, transparent 100%);
+}
+
 .hero-mark {
   position: absolute;
   right: clamp(-4rem, -2vw, 2rem);
@@ -312,6 +332,15 @@ button {
   margin-bottom: 1.6rem;
   overflow: hidden;
   background: var(--grey-800);
+}
+
+.product-visual img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .visual-frame {
