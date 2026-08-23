@@ -329,22 +329,10 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 .product-tile {
   height: 170px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3.2rem;
+  overflow: hidden;
 }
 
-.product-tile span { filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15)); }
-
-.tile-honig { background: linear-gradient(135deg, #f3c76b, #d69a2d); }
-.tile-schal { background: linear-gradient(135deg, #c98a5c, #9c4a1e); }
-.tile-kerze { background: linear-gradient(135deg, #f6e2b0, #c1602a); }
-.tile-konfi { background: linear-gradient(135deg, #e08b6f, #9c4a1e); }
-.tile-holz  { background: linear-gradient(135deg, #b98955, #6b4423); }
-.tile-kaese { background: linear-gradient(135deg, #f0d38a, #b97e1a); }
-.tile-seife { background: linear-gradient(135deg, #d9e4c8, #7f9c85); }
-.tile-korb  { background: linear-gradient(135deg, #e7c48a, #a87438); }
+.product-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .product-body {
   padding: 22px 22px 24px;
