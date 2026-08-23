@@ -343,17 +343,6 @@ button {
   display: block;
 }
 
-.visual-frame {
-  position: absolute;
-  inset: 14px;
-  border: 1px solid rgba(212, 255, 63, 0.35);
-  transition: inset 0.5s var(--ease);
-}
-
-.product-card:hover .visual-frame {
-  inset: 6px;
-}
-
 .visual-1 { background: linear-gradient(155deg, #1c1c1a 0%, #0a0a0a 55%, #2c2c29 100%); }
 .visual-2 { background: linear-gradient(200deg, #26261f 0%, #0a0a0a 60%, #16160f 100%); }
 .visual-3 { background: linear-gradient(135deg, #0a0a0a 0%, #232320 45%, #0a0a0a 100%); }
