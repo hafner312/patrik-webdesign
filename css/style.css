@@ -1840,7 +1840,7 @@ footer::before {
   content: '';
   width: 30px;
   height: 30px;
-  background: url('../images/logo.svg') no-repeat center / contain;
+  background: url('../images/logo.png') no-repeat center / contain;
 }
 
 .footer-nav {
