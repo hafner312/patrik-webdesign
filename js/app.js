@@ -3,16 +3,28 @@ const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 
 if (navToggle && navLinks) {
+  // Zustand auch für Screenreader mitführen, nicht nur visuell
+  function setNav(open) {
+    navLinks.classList.toggle('open', open);
+    navToggle.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Menü schliessen' : 'Menü öffnen');
+  }
+
   navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    navToggle.classList.toggle('open');
+    setNav(!navLinks.classList.contains('open'));
   });
 
   navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      navToggle.classList.remove('open');
-    });
+    link.addEventListener('click', () => setNav(false));
+  });
+
+  // Mit Escape schliessen und den Fokus zurück auf den Knopf geben
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+      setNav(false);
+      navToggle.focus();
+    }
   });
 }
 
