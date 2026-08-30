@@ -33,7 +33,11 @@ datenschutz.html    Privacy policy (template)
 css/style.css       Single stylesheet: color variables, layout, components, responsive
 js/app.js           Navigation, scroll reveal, portfolio filter, lightbox, contact form
 fonts/              Local .woff2 files (Space Grotesk, Inter)
-images/
+images/             Logo, portrait, social preview image
+projekte/           The 8 sample projects, each a self-contained mini site
+print/              Business card artwork + the OG image source (not part of the site)
+CNAME               Custom domain for GitHub Pages
+sitemap.xml         Lists the 7 public pages (sample projects deliberately excluded)
 ```
 
 All styling lives in **one** stylesheet and all behaviour in **one** script — when adding a
@@ -43,9 +47,14 @@ feature, extend `css/style.css` / `js/app.js` rather than introducing per-page f
 
 - **Fonts are loaded locally** from `fonts/`, deliberately avoiding external requests for privacy
   reasons. Do not replace them with a Google Fonts CDN link.
-- The site is intentionally **excluded from search engines** while under construction:
-  `robots.txt` plus `<meta name="robots" content="noindex, nofollow">` on every page. Keep both in
-  sync when adding a new page, and only remove them when the site actually goes live.
+- The site is **live and publicly indexed** at <https://pixelseite.ch> (GitHub Pages, custom domain
+  via `CNAME`; DNS at hosttech, HTTPS enforced). A new public page needs a `<link rel="canonical">`,
+  the Open Graph / Twitter block, and an entry in `sitemap.xml` — copy the head of an existing page.
+- The **sample projects under `projekte/` stay out of the index**: each of their pages carries
+  `<meta name="robots" content="noindex, nofollow">`. They portray invented businesses with made-up
+  addresses, so they must never surface as real companies in search results. Keep that tag on every
+  new sample-project page, and do not block `/projekte/` in `robots.txt` — crawlers have to read the
+  page to see the noindex.
 - Content is German throughout — new copy should match.
 - `.chrome-debug-profile/` is a generated Chrome profile for the F5 debug workflow. Ignore it; never
   edit or commit its contents.

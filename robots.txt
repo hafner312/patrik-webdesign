@@ -1,2 +1,10 @@
 User-agent: *
 Allow: /
+
+# Die Musterprojekte unter /projekte/ sind erfundene Beispielfirmen.
+# Sie tragen jeweils <meta name="robots" content="noindex, nofollow">,
+# damit sie nicht als echte Betriebe in den Suchergebnissen auftauchen.
+# Sie werden bewusst NICHT hier gesperrt – sonst könnten Suchmaschinen
+# das noindex gar nicht erst lesen.
+
+Sitemap: https://pixelseite.ch/sitemap.xml

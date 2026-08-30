@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>OG-Bild</title>
+<style>
+  /* Social-Vorschaubild: 1200 × 630 px (Standard für Open Graph / Twitter) */
+  @font-face { font-family:'Space Grotesk'; src:url('../fonts/space-grotesk-600.woff2') format('woff2'); font-weight:600; font-display:block; }
+  @font-face { font-family:'Inter'; src:url('../fonts/inter-400.woff2') format('woff2'); font-weight:400; font-display:block; }
+  @font-face { font-family:'Inter'; src:url('../fonts/inter-500.woff2') format('woff2'); font-weight:500; font-display:block; }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1200px; height:630px; overflow:hidden; }
+
+  .card {
+    position:relative; width:1200px; height:630px;
+    background:
+      radial-gradient(760px 560px at 86% 6%,  rgba(99,102,241,0.22), transparent 62%),
+      radial-gradient(640px 500px at 4%  98%, rgba(34,211,238,0.14), transparent 60%),
+      #0B0D12;
+    overflow:hidden;
+  }
+  .grid {
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.032) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.032) 1px, transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(820px 600px at 76% 18%, #000 0%, transparent 74%);
+    -webkit-mask-image:radial-gradient(820px 600px at 76% 18%, #000 0%, transparent 74%);
+  }
+  .px { position:absolute; border-radius:3px; }
+
+  .inner {
+    position:absolute; left:86px; top:86px; width:1028px; height:458px;
+    display:flex; flex-direction:column; justify-content:center;
+  }
+  .lockup { display:flex; align-items:center; gap:34px; }
+  .lockup img { width:132px; height:132px; display:block; }
+  .wordmark {
+    font-family:'Space Grotesk', sans-serif; font-weight:600;
+    font-size:76px; line-height:1; letter-spacing:-2.2px; color:#F2F4FD;
+  }
+  .wordmark span {
+    background:linear-gradient(100deg,#818CF8 0%, #22D3EE 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .rule { margin:38px 0 24px; width:118px; height:4px; border-radius:2px;
+          background:linear-gradient(90deg,#818CF8,#22D3EE); }
+  .claim {
+    font-family:'Inter', sans-serif; font-weight:400;
+    font-size:31px; line-height:1.5; color:#AEB3C9; max-width:720px;
+  }
+  .url {
+    position:absolute; left:86px; bottom:64px;
+    font-family:'Inter', sans-serif; font-weight:500;
+    font-size:26px; letter-spacing:1.4px; color:#6E75A0;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="grid"></div>
+
+  <span class="px" style="left:1086px;top:130px;width:26px;height:26px;background:#818CF8;opacity:.7;"></span>
+  <span class="px" style="left:1140px;top:178px;width:19px;height:19px;background:#6366F1;opacity:.55;"></span>
+  <span class="px" style="left:1100px;top:224px;width:14px;height:14px;background:#22D3EE;opacity:.5;"></span>
+  <span class="px" style="left:1156px;top:262px;width:11px;height:11px;background:#67E8F9;opacity:.35;"></span>
+
+  <div class="inner">
+    <div class="lockup">
+      <img src="../images/logo-master.png" alt="">
+      <div class="wordmark">Pixel<span>Seite</span></div>
+    </div>
+    <div class="rule"></div>
+    <p class="claim">Moderne, schnelle Webseiten — gestaltet und<br>umgesetzt in der Schweiz.</p>
+  </div>
+
+  <div class="url">PIXELSEITE.CH</div>
+</div>
+</body>
+</html>
