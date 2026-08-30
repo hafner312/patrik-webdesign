@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Visitenkarte Vorderseite</title>
+<style>
+  /* ---- Druckmasse -------------------------------------------------
+     Endformat (Trim)      85 × 55 mm   = 1004 × 650 px @300dpi
+     + 2 mm Beschnitt      89 × 59 mm   = 1051 × 697 px @300dpi
+     Sicherheitsabstand    3 mm ab Trim -> 59 px ab Canvas-Rand
+  ------------------------------------------------------------------ */
+
+  @font-face { font-family:'Space Grotesk'; src:url('../fonts/space-grotesk-500.woff2') format('woff2'); font-weight:500; font-display:block; }
+  @font-face { font-family:'Space Grotesk'; src:url('../fonts/space-grotesk-600.woff2') format('woff2'); font-weight:600; font-display:block; }
+  @font-face { font-family:'Space Grotesk'; src:url('../fonts/space-grotesk-700.woff2') format('woff2'); font-weight:700; font-display:block; }
+  @font-face { font-family:'Inter'; src:url('../fonts/inter-400.woff2') format('woff2'); font-weight:400; font-display:block; }
+  @font-face { font-family:'Inter'; src:url('../fonts/inter-500.woff2') format('woff2'); font-weight:500; font-display:block; }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1051px; height:697px; overflow:hidden; background:#0B0D12; }
+
+  .card {
+    position:relative;
+    width:1051px; height:697px;
+    background:
+      radial-gradient(680px 520px at 88% 8%,  rgba(99,102,241,0.20), transparent 62%),
+      radial-gradient(600px 480px at 6%  96%, rgba(34,211,238,0.13), transparent 60%),
+      #0B0D12;
+    overflow:hidden;
+  }
+
+  /* Feines Raster – nimmt das Pixel-Motiv des Logos auf, sehr zurückhaltend */
+  .grid {
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.030) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.030) 1px, transparent 1px);
+    background-size:52px 52px;
+    mask-image:radial-gradient(760px 560px at 78% 20%, #000 0%, transparent 72%);
+    -webkit-mask-image:radial-gradient(760px 560px at 78% 20%, #000 0%, transparent 72%);
+  }
+
+  /* Pixel-Auflösung, die nach rechts in den Anschnitt läuft */
+  .px { position:absolute; border-radius:3px; }
+
+  .inner {
+    position:absolute;
+    left:88px; top:59px;
+    width:875px; height:579px;      /* innerhalb der Sicherheitszone */
+    display:flex; flex-direction:column; justify-content:center;
+  }
+
+  .lockup { display:flex; align-items:center; gap:38px; }
+  .lockup img { width:168px; height:168px; display:block; }
+
+  .wordmark {
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600; font-size:82px; line-height:1;
+    letter-spacing:-2.5px; color:#F2F4FD;
+  }
+  .wordmark span {
+    background:linear-gradient(100deg,#818CF8 0%, #22D3EE 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+
+  .rule {
+    margin:44px 0 26px; width:132px; height:4px; border-radius:2px;
+    background:linear-gradient(90deg,#818CF8,#22D3EE);
+  }
+
+  .tagline {
+    font-family:'Inter', sans-serif; font-weight:400;
+    font-size:30px; line-height:1.5; letter-spacing:0.2px;
+    color:#A8ADC4; max-width:660px;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="grid"></div>
+
+  <span class="px" style="left:952px; top:126px; width:26px; height:26px; background:#818CF8; opacity:.75;"></span>
+  <span class="px" style="left:1000px;top:170px; width:20px; height:20px; background:#6366F1; opacity:.60;"></span>
+  <span class="px" style="left:966px; top:214px; width:15px; height:15px; background:#22D3EE; opacity:.55;"></span>
+  <span class="px" style="left:1016px;top:250px; width:12px; height:12px; background:#22D3EE; opacity:.40;"></span>
+  <span class="px" style="left:930px; top:266px; width:10px; height:10px; background:#67E8F9; opacity:.32;"></span>
+
+  <div class="inner">
+    <div class="lockup">
+      <img src="../images/logo-master.png" alt="">
+      <div class="wordmark">Pixel<span>Seite</span></div>
+    </div>
+    <div class="rule"></div>
+    <p class="tagline">Moderne, schnelle Webseiten —<br>gestaltet und umgesetzt in der Schweiz.</p>
+  </div>
+</div>
+</body>
+</html>
