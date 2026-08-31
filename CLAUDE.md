@@ -60,3 +60,24 @@ feature, extend `css/style.css` / `js/app.js` rather than introducing per-page f
   edit or commit its contents.
 - `.github/copilot-instructions.md` holds the template's own editor guidance — worth a look before
   restructuring the project.
+
+## Working efficiently (keep token usage down)
+
+This project involves a lot of external, non-code work (DNS at hosttech, GitHub Pages, Google
+Search Console, Google Business Profile, ImprovMX, directory listings) driven by the user pasting
+screenshots. That back-and-forth is what actually burns tokens in this repo, not the codebase
+itself. A few habits that keep it cheap without losing rigor:
+
+- **Verify once, not after every sub-step.** After a multi-field change (e.g. several DNS records),
+  check propagation once at the end — not after each individual field. Only re-check something that
+  was already confirmed working if there's a concrete reason to doubt it.
+- **Batch independent checks into one Bash call** (e.g. one script that runs several `nslookup`/`curl`
+  checks and prints a short summary) instead of one tool call per check.
+- **Don't take a full-page screenshot for a small visual tweak.** Crop to the relevant region, or
+  reason about the change from the diff when a render check isn't essential.
+- **For guided UI walkthroughs (third-party dashboards, DNS panels), give the next few unambiguous
+  steps together** rather than one field per turn — reserve single-step, wait-for-screenshot pacing
+  for points that are genuinely ambiguous or risky (e.g. anything that exposes a home address, costs
+  money, or is hard to reverse).
+- **Keep verification output short.** Print a one-line pass/fail per check, not raw command dumps,
+  unless something actually failed and the detail is needed to debug it.
