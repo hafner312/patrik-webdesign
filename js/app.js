@@ -257,7 +257,7 @@ if (contactForm) {
 
     try {
       await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm);
-      formNote.textContent = 'Danke für deine Anfrage! Ich melde mich schnellstmöglich bei dir zurück.';
+      formNote.textContent = 'Danke für Ihre Anfrage! Ich melde mich schnellstmöglich bei Ihnen zurück.';
       formNote.classList.add('visible');
       contactForm.reset();
     } catch (error) {
