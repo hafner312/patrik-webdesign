@@ -53,6 +53,7 @@ In VS Code kann die Seite auch per F5 gestartet werden.
 ```text
 index.html          Startseite
 leistungen.html     Leistungen, Preise, FAQ
+webdesign-uri.html  Lokale SEO-Landingpage fuer Webdesign in Uri
 projekte.html       Portfolio mit Filter und Lightbox
 ueber-mich.html     Ueber-mich-Seite
 kontakt.html        Kontaktseite mit EmailJS-Formular
@@ -103,4 +104,5 @@ Wenn Codex Dateien in diesem Repo aendert, sollen die Aenderungen danach committ
 - Keine externen Font-CDNs einbauen.
 - Keine Musterprojekt-Seiten indexieren lassen.
 - Neue oeffentliche Seiten brauchen Canonical, Open Graph/Twitter-Tags und einen Sitemap-Eintrag.
+- Die lokale SEO-Seite `webdesign-uri.html` zielt auf Webdesign Uri, Altdorf und Zentralschweiz.
 - Keine Trackingdienste ohne vorherige Datenschutzpruefung einbauen.

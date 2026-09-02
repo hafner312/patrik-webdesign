@@ -25,6 +25,7 @@ There is no build, no bundler, no test suite. Edited files are live on reload.
 ```
 index.html          Home (hero, services, process, projects, CTA)
 leistungen.html     Services, pricing, FAQ
+webdesign-uri.html  Local SEO landing page for Webdesign Uri / Altdorf / Zentralschweiz
 projekte.html       Portfolio with filter & lightbox
 ueber-mich.html     About
 kontakt.html        Contact page with form
