@@ -27,6 +27,7 @@ Die Seite ist live unter:
 - Lokaler Dev-Server ueber `http-server`
 - Lokale Fonts aus `fonts/`
 - Kontaktformular ueber EmailJS
+- Kundenkontakt und Projektabstimmung laufen ausschliesslich remote.
 
 ## Starten
 
@@ -108,3 +109,4 @@ Wenn Codex Dateien in diesem Repo aendert, sollen die Aenderungen danach committ
 - Die regionale SEO-Seite `webdesign-zentralschweiz.html` zielt auf die deutschsprachige Zentralschweiz.
 - `webdesign-uri.html` bleibt als engere lokale Unterseite fuer Uri/Altdorf bestehen.
 - Keine Trackingdienste ohne vorherige Datenschutzpruefung einbauen.
+- Keine Texte einbauen, die Vor-Ort-Termine oder physischen Kundenkontakt erwarten lassen.
