@@ -1,65 +1,106 @@
-# PixelSeite – Website
+# PixelSeite Website
 
-Statische Website für **PixelSeite** – ein Angebot rund um das Erstellen, Entwickeln und Deployen moderner Webseiten. Die Seite präsentiert Leistungen, Preispakete, Projekte und stellt Patrik vor. Alle Inhalte sind auf Deutsch.
+Statische Website fuer **PixelSeite**: Webdesign, Frontend-Entwicklung, Veroeffentlichung und SEO-Grundlagen fuer Selbststaendige, KMU und Vereine.
 
-Design: dunkler, moderner „Tech"-Look mit Indigo-→-Cyan-Verlauf. Aufgebaut nach dem Vorbild der Website `webseite-sandra`, aber mit eigenem Thema, eigenen Farben und eigener Struktur.
+Die Seite ist live unter:
 
-> **Status:** Die Seite ist aktuell bewusst von Suchmaschinen ausgeschlossen (`robots.txt` + `<meta name="robots" content="noindex, nofollow">` auf jeder Seite), da sie sich noch im Aufbau befindet und Platzhalter-Inhalte enthält.
+`https://pixelseite.ch/`
+
+## Aktueller Stand
+
+- Domain `pixelseite.ch` ist registriert.
+- Hosting laeuft ueber GitHub Pages.
+- HTTPS ist aktiv.
+- `CNAME` ist gesetzt.
+- `sitemap.xml` listet die 7 oeffentlichen Seiten.
+- Die Hauptseiten sind fuer Suchmaschinen freigegeben.
+- Musterprojekte unter `projekte/` bleiben bewusst `noindex, nofollow`.
+- Google Search Console ist eingerichtet und die Sitemap ist eingereicht.
+- Google Unternehmensprofil ist bestaetigt.
+- localsearch/local.ch/search.ch/localcities.ch ist eingereicht, Freigabe offen.
+- Google Ads ist vorbereitet, aber noch nicht live.
 
 ## Tech-Stack
 
-- Reines HTML5, CSS3 und Vanilla JavaScript – kein Framework, kein Build-Tool
-- Schriften (`Space Grotesk`, `Inter`) werden **lokal** aus `fonts/` geladen (kein externer Request, datenschutzfreundlich)
-- Lokaler Dev-Server über [`http-server`](https://www.npmjs.com/package/http-server) (npm), gestartet per VS-Code-Debugkonfiguration
+- Reines HTML5, CSS3 und Vanilla JavaScript
+- Kein Framework, kein Build-Schritt
+- Lokaler Dev-Server ueber `http-server`
+- Lokale Fonts aus `fonts/`
+- Kontaktformular ueber EmailJS
 
-## Lokal ansehen (F5-Workflow)
+## Starten
 
-Diese Vorlage startet die Seite über **Ausführen > Debugging starten** bzw. **F5**. VS Code startet dabei automatisch den lokalen Webserver und öffnet die Seite in einem separaten Chrome-Fenster mit eigenem Debug-Profil (getrennt von deinem normalen Chrome).
+Einmalig:
 
-**Einmalige Einrichtung:**
+```bash
+npm install
+```
 
-1. Den Ordner in VS Code öffnen.
-2. Im Terminal `npm install` ausführen.
-3. **F5** drücken (bzw. **Ausführen > Debugging starten**).
-4. Falls VS Code nach einer Konfiguration fragt: **Webseite in separatem Chrome starten** wählen.
+Lokal starten:
 
-Beenden mit **Umschalt + F5**. Alternativ ohne VS Code direkt im Terminal: `npm start` und dann `http://localhost:5500` öffnen.
+```bash
+npm start
+```
+
+Danach im Browser:
+
+`http://localhost:5500`
+
+In VS Code kann die Seite auch per F5 gestartet werden.
 
 ## Struktur
 
+```text
+index.html          Startseite
+leistungen.html     Leistungen, Preise, FAQ
+projekte.html       Portfolio mit Filter und Lightbox
+ueber-mich.html     Ueber-mich-Seite
+kontakt.html        Kontaktseite mit EmailJS-Formular
+impressum.html      Impressum
+datenschutz.html    Datenschutzerklaerung
+css/style.css       Zentrales Stylesheet
+js/app.js           Navigation, Animationen, Filter, Formular
+fonts/              Lokale Schriften
+images/             Logo, Portrait, OG-Bild, Ads-Bild
+projekte/           Musterprojekte, bewusst noindex
+print/              Druckmaterial
+intern/             Interne Notizen, nicht oeffentlich verlinkt
 ```
-index.html          Startseite (Hero, Leistungen, Prozess, Projekte, CTA)
-leistungen.html      Leistungen, Preise, FAQ
-projekte.html        Portfolio mit Filter & Lightbox
-ueber-mich.html       Über-mich-Seite
-kontakt.html          Kontaktseite mit Formular
-impressum.html        Impressum (Vorlage)
-datenschutz.html      Datenschutzerklärung (Vorlage)
-css/style.css         Zentrales Stylesheet (Farbvariablen, Layout, Komponenten, Responsive)
-js/app.js             Navigation, Scroll-Reveal, Portfolio-Filter, Lightbox, Kontaktformular
-fonts/               Lokale Schriftdateien (Space Grotesk, Inter, .woff2)
-images/logo.svg       Logo (</> -Monogramm im Indigo→Cyan-Verlauf)
-package.json          npm-Start-Skript (http-server) + devDependency
-.vscode/             Debugkonfiguration (F5 → Chrome) & Server-Task
-.github/             copilot-instructions.md (Projekt-Anweisung für die KI)
-robots.txt            Sperrt aktuell die gesamte Seite für Suchmaschinen
-```
 
-## Port ändern
+## Datenschutz
 
-Der Webserver verwendet Port `5500`. Falls belegt, an zwei Stellen ändern:
+Aktuell verwendet die Website keine Analytics-, Google-Tag-Manager-, Meta-Pixel- oder Retargeting-Tags. Die Fonts werden lokal geladen.
 
-- `package.json` bei `-p 5500`
-- `.vscode/launch.json` bei `http://localhost:5500`
+Die Kontaktseite nutzt EmailJS. EmailJS ist in der Datenschutzerklaerung genannt.
 
-## Noch anzupassen (Platzhalter)
+Vor Google Ads Conversion Tracking, Analytics, Retargeting oder UTM-Uebermittlung im Formular muss zuerst geklaert werden:
 
-Erledigt: ✅ Name **PixelSeite** (Domain `pixelseite.ch`) · ✅ E-Mail `hafner312@gmail.com` (Kontakt & Impressum) · ✅ Portrait-Foto · ✅ Kontaktformular via EmailJS · ✅ Impressum-Adresse · ✅ SEO-Freigabe (`robots.txt` + `noindex`-Tags entfernt).
+- Datenschutzerklaerung aktualisieren
+- notwendige Daten minimieren
+- Einwilligung/Consent-Banner pruefen
+- keine Tags vor erforderlicher Zustimmung laden
 
-Bevor die Seite live geht, noch offen:
+## Marketing-Status
 
-1. **Preise** – die Preise auf `leistungen.html` sind unverbindliche Richtwerte; nach Bedarf anpassen.
-2. **Projekte** – in `projekte.html` die Platzhalter-Kacheln (`placeholder-art`) durch echte Screenshots ersetzen (siehe Kommentar in der Datei).
-3. **Domain** – `pixelseite.ch` registrieren (z. B. bei Hostpoint/Infomaniak), sobald du live gehen willst.
+Interne Notizen stehen in:
 
-**Kontaktformular-Details:** Versand über [EmailJS](https://www.emailjs.com) (kostenlos bis 200 E-Mails/Monat). Service-/Template-/Public-Key stehen in `js/app.js` oben (`EMAILJS_*`-Konstanten) – im EmailJS-Dashboard unter „Email Templates" kannst du den Mailtext jederzeit anpassen, ohne Code zu ändern.
+`intern/marketing-status.md`
+
+Wichtige naechste Schritte:
+
+- Sandra wegen Testimonial und Rueckverweis von `diamoon-art.ch` fragen
+- localsearch-Freigabe pruefen
+- echte Social-Links erst einbauen, wenn Profile vorhanden sind
+- Google Ads erst nach Trust-Beweis und Consent-Klaerung starten
+- Conversion-Tracking im EmailJS-Erfolgszweig von `js/app.js` umsetzen, falls Ads live gehen
+
+## Arbeitsregel fuer Codex
+
+Wenn Codex Dateien in diesem Repo aendert, sollen die Aenderungen danach committed und gepusht werden, sofern der User nichts anderes sagt.
+
+## Hinweise
+
+- Keine externen Font-CDNs einbauen.
+- Keine Musterprojekt-Seiten indexieren lassen.
+- Neue oeffentliche Seiten brauchen Canonical, Open Graph/Twitter-Tags und einen Sitemap-Eintrag.
+- Keine Trackingdienste ohne vorherige Datenschutzpruefung einbauen.

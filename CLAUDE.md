@@ -36,6 +36,7 @@ fonts/              Local .woff2 files (Space Grotesk, Inter)
 images/             Logo, portrait, social preview image
 projekte/           The 8 sample projects, each a self-contained mini site
 print/              Business card artwork + the OG image source (not part of the site)
+intern/             Business-process notes for the owner (not part of the site)
 CNAME               Custom domain for GitHub Pages
 sitemap.xml         Lists the 7 public pages (sample projects deliberately excluded)
 ```
@@ -81,3 +82,7 @@ itself. A few habits that keep it cheap without losing rigor:
   money, or is hard to reverse).
 - **Keep verification output short.** Print a one-line pass/fail per check, not raw command dumps,
   unless something actually failed and the detail is needed to debug it.
+
+## Codex commit rule
+
+When Codex changes files in this repo, commit and push those changes after verification unless the user explicitly says otherwise.
