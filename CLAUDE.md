@@ -60,6 +60,7 @@ feature, extend `css/style.css` / `js/app.js` rather than introducing per-page f
   page to see the noindex.
 - Content is German throughout — new copy should match.
 - PixelSeite does not offer physical customer contact or on-site meetings. Public copy should frame collaboration as remote-only via email or video call.
+- PixelSeite also serves private individuals without a company. Pricing copy should keep the three package anchors, but frame them as guideline prices with project-specific assessment rather than open-ended haggling.
 - `.chrome-debug-profile/` is a generated Chrome profile for the F5 debug workflow. Ignore it; never
   edit or commit its contents.
 - `.github/copilot-instructions.md` holds the template's own editor guidance — worth a look before

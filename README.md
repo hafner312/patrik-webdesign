@@ -1,6 +1,6 @@
 # PixelSeite Website
 
-Statische Website fuer **PixelSeite**: Webdesign, Frontend-Entwicklung, Veroeffentlichung und SEO-Grundlagen fuer Selbststaendige, KMU und Vereine.
+Statische Website fuer **PixelSeite**: Webdesign, Frontend-Entwicklung, Veroeffentlichung und SEO-Grundlagen fuer Privatpersonen, Selbststaendige, KMU und Vereine.
 
 Die Seite ist live unter:
 
@@ -28,6 +28,7 @@ Die Seite ist live unter:
 - Lokale Fonts aus `fonts/`
 - Kontaktformular ueber EmailJS
 - Kundenkontakt und Projektabstimmung laufen ausschliesslich remote.
+- Auch Privatpersonen ohne Unternehmen gehoeren zur Zielgruppe.
 
 ## Starten
 
@@ -110,3 +111,4 @@ Wenn Codex Dateien in diesem Repo aendert, sollen die Aenderungen danach committ
 - `webdesign-uri.html` bleibt als engere lokale Unterseite fuer Uri/Altdorf bestehen.
 - Keine Trackingdienste ohne vorherige Datenschutzpruefung einbauen.
 - Keine Texte einbauen, die Vor-Ort-Termine oder physischen Kundenkontakt erwarten lassen.
+- Die drei Preispakete bleiben als Orientierung sichtbar; finale Angebote werden individuell nach Projektidee, Umfang und Situation berechnet.
