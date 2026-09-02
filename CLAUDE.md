@@ -25,7 +25,8 @@ There is no build, no bundler, no test suite. Edited files are live on reload.
 ```
 index.html          Home (hero, services, process, projects, CTA)
 leistungen.html     Services, pricing, FAQ
-webdesign-uri.html  Local SEO landing page for Webdesign Uri / Altdorf / Zentralschweiz
+webdesign-zentralschweiz.html  Regional SEO landing page for German-speaking Zentralschweiz
+webdesign-uri.html             Local supporting page for Webdesign Uri / Altdorf
 projekte.html       Portfolio with filter & lightbox
 ueber-mich.html     About
 kontakt.html        Contact page with form
@@ -39,7 +40,7 @@ projekte/           The 8 sample projects, each a self-contained mini site
 print/              Business card artwork + the OG image source (not part of the site)
 intern/             Business-process notes for the owner (not part of the site)
 CNAME               Custom domain for GitHub Pages
-sitemap.xml         Lists the 7 public pages (sample projects deliberately excluded)
+sitemap.xml         Lists the 9 public pages (sample projects deliberately excluded)
 ```
 
 All styling lives in **one** stylesheet and all behaviour in **one** script — when adding a

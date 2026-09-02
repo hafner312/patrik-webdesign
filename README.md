@@ -12,7 +12,7 @@ Die Seite ist live unter:
 - Hosting laeuft ueber GitHub Pages.
 - HTTPS ist aktiv.
 - `CNAME` ist gesetzt.
-- `sitemap.xml` listet die 7 oeffentlichen Seiten.
+- `sitemap.xml` listet die 9 oeffentlichen Seiten.
 - Die Hauptseiten sind fuer Suchmaschinen freigegeben.
 - Musterprojekte unter `projekte/` bleiben bewusst `noindex, nofollow`.
 - Google Search Console ist eingerichtet und die Sitemap ist eingereicht.
@@ -53,7 +53,8 @@ In VS Code kann die Seite auch per F5 gestartet werden.
 ```text
 index.html          Startseite
 leistungen.html     Leistungen, Preise, FAQ
-webdesign-uri.html  Lokale SEO-Landingpage fuer Webdesign in Uri
+webdesign-zentralschweiz.html  Regionale SEO-Landingpage fuer Webdesign in der Zentralschweiz
+webdesign-uri.html             Lokale Unterseite fuer Webdesign in Uri
 projekte.html       Portfolio mit Filter und Lightbox
 ueber-mich.html     Ueber-mich-Seite
 kontakt.html        Kontaktseite mit EmailJS-Formular
@@ -104,5 +105,6 @@ Wenn Codex Dateien in diesem Repo aendert, sollen die Aenderungen danach committ
 - Keine externen Font-CDNs einbauen.
 - Keine Musterprojekt-Seiten indexieren lassen.
 - Neue oeffentliche Seiten brauchen Canonical, Open Graph/Twitter-Tags und einen Sitemap-Eintrag.
-- Die lokale SEO-Seite `webdesign-uri.html` zielt auf Webdesign Uri, Altdorf und Zentralschweiz.
+- Die regionale SEO-Seite `webdesign-zentralschweiz.html` zielt auf die deutschsprachige Zentralschweiz.
+- `webdesign-uri.html` bleibt als engere lokale Unterseite fuer Uri/Altdorf bestehen.
 - Keine Trackingdienste ohne vorherige Datenschutzpruefung einbauen.
