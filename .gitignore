@@ -11,3 +11,6 @@ Thumbs.db
 
 # Nicht verwendete Bilder / Arbeitsdateien
 images/unused/
+
+# Interne Notizen, bewusst nicht im öffentlichen Repo
+intern/
