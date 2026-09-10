@@ -14,3 +14,6 @@ images/unused/
 
 # Interne Notizen, bewusst nicht im öffentlichen Repo
 intern/
+
+# Lokale Zugangsdaten (API-Keys), niemals ins Repo
+.env.local

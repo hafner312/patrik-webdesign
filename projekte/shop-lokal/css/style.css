@@ -333,7 +333,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   background: var(--color-cream-alt);
 }
 
-.product-tile img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.product-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .product-body {
   padding: 22px 22px 24px;
@@ -572,4 +572,11 @@ address {
   .hero-actions .btn { width: 100%; }
   .product-footer { flex-direction: column; align-items: stretch; }
   .btn-cart { width: 100%; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }

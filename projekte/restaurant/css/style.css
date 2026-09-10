@@ -213,10 +213,20 @@ p { margin: 0 0 1em; }
   padding: 150px 0 130px;
   color: var(--color-white);
 }
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.32;
+  filter: saturate(0.85);
+}
 .hero-decor {
   position: absolute;
   inset: 0;
   background:
+    linear-gradient(180deg, rgba(20, 38, 29, 0.55) 0%, rgba(20, 38, 29, 0.75) 100%),
     radial-gradient(38% 55% at 88% 20%, rgba(199, 154, 75, 0.35), transparent 70%),
     radial-gradient(30% 40% at 78% 85%, rgba(224, 188, 120, 0.18), transparent 70%);
   pointer-events: none;
@@ -351,20 +361,21 @@ p { margin: 0 0 1em; }
   transform: translateY(-6px);
   box-shadow: var(--shadow-lift);
 }
-.ambience-tile::before {
-  content: '';
+.ambience-tile img {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
 }
+.ambience-tile:hover img { transform: scale(1.04); }
 .ambience-tile::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(20, 38, 29, 0.65) 0%, transparent 55%);
+  background: linear-gradient(to top, rgba(20, 38, 29, 0.75) 0%, rgba(20, 38, 29, 0.15) 55%, transparent 100%);
 }
-.tile-a::before { background: radial-gradient(120% 140% at 20% 0%, #3c684c, #1e3b2c 70%); }
-.tile-b::before { background: radial-gradient(120% 140% at 80% 100%, #e0bc78, #a67c33 55%, #6f4f21 100%); }
-.tile-c::before { background: radial-gradient(120% 140% at 50% 0%, #4a7a5a, #14261d 75%); }
 .ambience-label {
   position: relative;
   z-index: 1;
@@ -372,6 +383,44 @@ p { margin: 0 0 1em; }
   font-family: var(--font-serif);
   font-size: 1.3rem;
   padding: 26px;
+}
+
+/* ---------- Gerichte ---------- */
+.dish-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 64px;
+}
+.dish {
+  margin: 0;
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+}
+.dish img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.dish figcaption {
+  padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.dish-name {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  color: var(--color-forest-dark);
+}
+.dish-note {
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
 }
 
 /* ---------- Reservation ---------- */
@@ -472,6 +521,7 @@ p { margin: 0 0 1em; }
 @media (max-width: 960px) {
   .menu-grid { grid-template-columns: 1fr 1fr; }
   .ambience-grid { grid-template-columns: 1fr 1fr; }
+  .dish-grid { grid-template-columns: 1fr 1fr; }
   .reservation-inner { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
 }
@@ -508,6 +558,7 @@ p { margin: 0 0 1em; }
   .menu-grid { grid-template-columns: 1fr; gap: 32px; }
   .ambience-grid { grid-template-columns: 1fr; }
   .ambience-tile { height: 240px; }
+  .dish-grid { grid-template-columns: 1fr; margin-top: 44px; }
 }
 
 @media (max-width: 480px) {

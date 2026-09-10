@@ -188,6 +188,14 @@ p { margin: 0; }
   isolation: isolate;
 }
 .hero-bg { position: absolute; inset: 0; z-index: -1; }
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.22;
+}
 .hero-grid {
   position: absolute;
   inset: 0;
@@ -370,24 +378,14 @@ p { margin: 0; }
 }
 .speaker-card:hover { transform: translateY(-4px); border-color: var(--accent); }
 .avatar {
-  width: 84px;
-  height: 84px;
+  width: 104px;
+  height: 104px;
   border-radius: 50%;
   margin: 0 auto 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.4rem;
-  color: var(--navy-950);
+  display: block;
+  object-fit: cover;
+  object-position: center 20%;
 }
-.avatar-1 { background: linear-gradient(135deg, #c8ff3d, #6ee7b7); }
-.avatar-2 { background: linear-gradient(135deg, #7cf29c, #34d0c6); }
-.avatar-3 { background: linear-gradient(135deg, #a3ff5c, #38bdf8); color: #06101f; }
-.avatar-4 { background: linear-gradient(135deg, #d9ff6b, #7ce0a3); }
-.avatar-5 { background: linear-gradient(135deg, #8bf3b0, #c8ff3d); }
-.avatar-6 { background: linear-gradient(135deg, #baff5c, #4fd3c4); }
 .speaker-card h3 { font-size: 1.1rem; margin-bottom: 4px; }
 .speaker-role { color: var(--text-muted); font-size: 0.9rem; }
 
@@ -474,36 +472,6 @@ p { margin: 0; }
 .contact-list a { color: var(--text); font-weight: 600; }
 .contact-list a:hover { color: var(--accent); }
 
-.map-placeholder {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius);
-  border: 1px solid var(--navy-border);
-  background:
-    linear-gradient(135deg, rgba(200,255,61,0.08), transparent 60%),
-    repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 32px),
-    repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 32px),
-    var(--navy-800);
-  overflow: hidden;
-}
-.map-pin {
-  position: absolute;
-  top: 42%;
-  left: 55%;
-  width: 22px;
-  height: 22px;
-  border-radius: 50% 50% 50% 0;
-  transform: translate(-50%, -100%) rotate(-45deg);
-  background: var(--accent);
-  box-shadow: 0 0 0 8px rgba(200,255,61,0.15);
-}
-.map-pin::after {
-  content: '';
-  position: absolute;
-  inset: 6px;
-  background: var(--navy-950);
-  border-radius: 50%;
-}
 
 /* ---- Footer ---- */
 .site-footer {
@@ -537,8 +505,7 @@ p { margin: 0; }
   .ticket-grid { grid-template-columns: 1fr; }
   .ticket-featured { transform: none; }
   .anfahrt-grid { grid-template-columns: 1fr; }
-  .map-placeholder { order: -1; }
-}
+  }
 
 @media (max-width: 760px) {
   .main-nav {
@@ -572,3 +539,21 @@ p { margin: 0; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .scroll-hint span { animation: none; }
 }
+
+.venue-photo {
+  margin: 0;
+}
+.venue-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--navy-border);
+}
+.venue-photo figcaption {
+  margin-top: 12px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
