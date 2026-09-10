@@ -620,6 +620,7 @@ img {
 }
 
 .code-body .ln { display: block; white-space: pre; }
+.code-body .t { display: inline-block; min-width: 9.5em; }
 .code-body .k { color: var(--color-violet); }
 .code-body .t { color: var(--color-cyan); }
 .code-body .s { color: #9DE8B4; }
@@ -822,6 +823,17 @@ section {
   background: linear-gradient(155deg, rgba(99, 102, 241, 0.18), rgba(34, 211, 238, 0.12));
   border: 1px solid var(--border-glow);
   border-radius: 14px;
+}
+
+.card .icon svg,
+.contact-detail .icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-cyan);
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .card h3 {
