@@ -4,12 +4,12 @@
    ========================================================================== */
 
 :root {
-  --black: #0a0a0a;
-  --white: #f7f6f4;
-  --off-white: #ece9e4;
-  --grey-600: #7a7a76;
-  --grey-800: #2a2a28;
-  --accent: #d4ff3f; /* Lime-Neon */
+  --black: #2b2724;
+  --white: #faf7f2;
+  --off-white: #efe9e0;
+  --grey-600: #8a8079;
+  --grey-800: #b9ab9c;
+  --accent: #a8927d; /* warmes Ton-Braun */
 
   --font-display: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
   --font-body: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
@@ -120,10 +120,10 @@ button {
   position: sticky;
   top: 0;
   z-index: 500;
-  background: rgba(10, 10, 10, 0.85);
+  background: rgba(43, 39, 36, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(247, 246, 244, 0.08);
+  border-bottom: 1px solid rgba(250, 247, 242, 0.08);
 }
 
 .header-inner {
@@ -230,7 +230,7 @@ button {
 .btn-outline {
   background: transparent;
   color: var(--white);
-  border-color: rgba(247, 246, 244, 0.35);
+  border-color: rgba(250, 247, 242, 0.35);
   font-weight: 500;
 }
 
@@ -248,7 +248,7 @@ button {
   display: flex;
   align-items: center;
   overflow: hidden;
-  border-bottom: 1px solid rgba(247, 246, 244, 0.08);
+  border-bottom: 1px solid rgba(250, 247, 242, 0.08);
 }
 
 .hero-inner {
@@ -293,7 +293,7 @@ button {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, var(--black, #0a0a0a) 0%, rgba(10, 10, 10, 0.75) 35%, rgba(10, 10, 10, 0.15) 65%, transparent 100%);
+  background: linear-gradient(90deg, var(--black) 0%, rgba(43, 39, 36, 0.8) 38%, rgba(43, 39, 36, 0.25) 68%, transparent 100%);
 }
 
 .hero-mark {
@@ -306,7 +306,7 @@ button {
   font-size: min(60vw, 55rem);
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(247, 246, 244, 0.06);
+  -webkit-text-stroke: 1px rgba(250, 247, 242, 0.06);
   z-index: 1;
   pointer-events: none;
   user-select: none;
@@ -337,20 +337,17 @@ button {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
   display: block;
 }
 
-.visual-1 { background: linear-gradient(155deg, #1c1c1a 0%, #0a0a0a 55%, #2c2c29 100%); }
-.visual-2 { background: linear-gradient(200deg, #26261f 0%, #0a0a0a 60%, #16160f 100%); }
-.visual-3 { background: linear-gradient(135deg, #0a0a0a 0%, #232320 45%, #0a0a0a 100%); }
-.visual-4 { background: linear-gradient(115deg, #201f1a 0%, #0a0a0a 50%, #262620 100%); }
 
 .product-visual::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 30% 20%, rgba(212, 255, 63, 0.08), transparent 55%);
+  background: radial-gradient(circle at 30% 20%, rgba(168, 146, 125, 0.10), transparent 55%);
   transition: opacity 0.4s var(--ease);
 }
 
@@ -421,7 +418,7 @@ button {
   gap: clamp(2rem, 6vw, 5rem);
   margin-top: 3.5rem;
   flex-wrap: wrap;
-  border-top: 1px solid rgba(10, 10, 10, 0.12);
+  border-top: 1px solid rgba(43, 39, 36, 0.12);
   padding-top: 2.5rem;
 }
 
@@ -446,7 +443,7 @@ button {
 /* ---------- Newsletter ---------- */
 
 .newsletter {
-  border-top: 1px solid rgba(247, 246, 244, 0.08);
+  border-top: 1px solid rgba(250, 247, 242, 0.08);
 }
 
 .newsletter-inner {
@@ -476,7 +473,7 @@ button {
 .newsletter-form input {
   flex: 1 1 16rem;
   background: transparent;
-  border: 1px solid rgba(247, 246, 244, 0.3);
+  border: 1px solid rgba(250, 247, 242, 0.3);
   color: var(--white);
   padding: 0.9rem 1.2rem;
   font-size: 0.95rem;
@@ -503,7 +500,7 @@ button {
 /* ---------- Footer ---------- */
 
 .site-footer {
-  border-top: 1px solid rgba(247, 246, 244, 0.08);
+  border-top: 1px solid rgba(250, 247, 242, 0.08);
   padding: 3rem 0;
 }
 
