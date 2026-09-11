@@ -719,6 +719,17 @@ section {
   aspect-ratio: 4 / 3.2;
 }
 
+/* Enthaelt das Panel ein Code-Fenster statt eines Bildes, darf es sich nicht
+   auf ein festes Seitenverhaeltnis strecken - sonst bleibt unten Leerraum. */
+.intro-visual:has(.code-window) {
+  aspect-ratio: auto;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  overflow: visible;
+  align-self: start;
+}
+
 .intro-visual img {
   width: 100%;
   height: 100%;
@@ -1357,6 +1368,18 @@ section {
   font-size: 1.5rem;
   line-height: 1.3;
   flex-shrink: 0;
+}
+
+.notice .notice-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--color-cyan);
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: block;
+  margin-top: 2px;
 }
 
 .notice h3 {
