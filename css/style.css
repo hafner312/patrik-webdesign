@@ -1125,6 +1125,28 @@ section {
   color: var(--text-body);
 }
 
+.gallery-item.featured-project {
+  border-color: rgba(34, 211, 238, 0.45);
+  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.25), var(--shadow-soft, 0 20px 40px rgba(0,0,0,0.25));
+}
+
+.gallery-item.featured-project .item-tag {
+  color: #0F1219;
+  background: linear-gradient(120deg, var(--color-cyan-light), var(--color-indigo-light));
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.gallery-item .item-quote {
+  margin-top: 0.7rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--text-body);
+}
+
 .gallery-empty {
   display: none;
   text-align: center;
