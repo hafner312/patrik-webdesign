@@ -260,6 +260,15 @@ if (contactForm) {
       formNote.textContent = 'Danke für Ihre Anfrage! Ich melde mich schnellstmöglich bei Ihnen zurück.';
       formNote.classList.add('visible');
       contactForm.reset();
+
+      // Google Ads Conversion: zählt nur eine erfolgreich versendete Anfrage
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18422436335/IwPgCPKZ-OscEO-jwNBE',
+          'value': 1.0,
+          'currency': 'CHF'
+        });
+      }
     } catch (error) {
       formNote.textContent = 'Ups, das hat leider nicht geklappt. Bitte versuch es in ein paar Minuten nochmal oder schreib mir direkt eine E-Mail.';
       formNote.classList.add('visible', 'error');
