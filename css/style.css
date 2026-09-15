@@ -648,6 +648,44 @@ img {
 
 section {
   padding: 6.5rem 0;
+  position: relative;
+}
+
+/* Jeder zweite Abschnitt bekommt eine leicht abgehobene Flaeche, damit die
+   Seite beim Scrollen einen Rhythmus hat statt einer durchgehenden Flaeche. */
+main > section:nth-of-type(even) {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.012) 0%,
+    rgba(255, 255, 255, 0.032) 50%,
+    rgba(255, 255, 255, 0.012) 100%
+  );
+}
+
+/* Feine Trennlinie am oberen Rand jedes Abschnitts ab dem zweiten,
+   laeuft zu den Seiten hin aus. */
+main > section + section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1180px, 88%);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border) 20%,
+    var(--border-glow) 50%,
+    var(--border) 80%,
+    transparent 100%
+  );
+  opacity: 0.55;
+}
+
+/* Der Hero braucht weder Flaeche noch Trennlinie. */
+main > section.hero {
+  background: none;
 }
 
 .section-label {
