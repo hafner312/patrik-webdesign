@@ -436,12 +436,13 @@ img {
 /* ---------- Hero ---------- */
 
 .hero {
-  min-height: 94vh;
-  min-height: 94svh;
+  min-height: 82vh;
+  min-height: 82svh;
+  max-height: 900px;
   display: flex;
   align-items: center;
   position: relative;
-  padding: 9rem 0 4rem;
+  padding: 7rem 0 4rem;
   overflow: hidden;
 }
 
@@ -651,15 +652,34 @@ section {
   position: relative;
 }
 
-/* Jeder zweite Abschnitt bekommt eine leicht abgehobene Flaeche, damit die
-   Seite beim Scrollen einen Rhythmus hat statt einer durchgehenden Flaeche. */
-main > section:nth-of-type(even) {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.012) 0%,
-    rgba(255, 255, 255, 0.032) 50%,
-    rgba(255, 255, 255, 0.012) 100%
-  );
+/* Farbrhythmus: die Abschnitte wechseln sich mit einem eigenen Farbstich ab,
+   damit die Seite beim Scrollen nicht wie eine durchgehende Flaeche wirkt.
+   Reihenfolge Indigo -> Cyan -> Violett, dann wieder von vorn. */
+main > section:nth-of-type(4n + 2) {
+  background:
+    radial-gradient(ellipse 80% 55% at 15% 0%, rgba(99, 102, 241, 0.16), transparent 70%),
+    radial-gradient(ellipse 70% 50% at 88% 100%, rgba(129, 140, 248, 0.10), transparent 72%),
+    linear-gradient(180deg, rgba(99, 102, 241, 0.05), rgba(99, 102, 241, 0.02));
+}
+
+main > section:nth-of-type(4n + 3) {
+  background:
+    radial-gradient(ellipse 75% 55% at 85% 5%, rgba(34, 211, 238, 0.14), transparent 70%),
+    radial-gradient(ellipse 65% 45% at 10% 95%, rgba(103, 232, 249, 0.09), transparent 72%),
+    linear-gradient(180deg, rgba(34, 211, 238, 0.045), rgba(34, 211, 238, 0.015));
+}
+
+main > section:nth-of-type(4n + 4) {
+  background:
+    radial-gradient(ellipse 80% 55% at 20% 100%, rgba(139, 92, 246, 0.16), transparent 70%),
+    radial-gradient(ellipse 60% 45% at 90% 0%, rgba(99, 102, 241, 0.09), transparent 72%),
+    linear-gradient(180deg, rgba(139, 92, 246, 0.04), rgba(139, 92, 246, 0.02));
+}
+
+main > section:nth-of-type(4n + 5) {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(34, 211, 238, 0.10), transparent 68%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.022), rgba(255, 255, 255, 0.008));
 }
 
 /* Feine Trennlinie am oberen Rand jedes Abschnitts ab dem zweiten,
@@ -869,10 +889,39 @@ main > section.hero {
   justify-content: center;
   font-size: 1.5rem;
   margin-bottom: 1.3rem;
-  background: linear-gradient(155deg, rgba(99, 102, 241, 0.18), rgba(34, 211, 238, 0.12));
-  border: 1px solid var(--border-glow);
+  background: linear-gradient(155deg, rgba(99, 102, 241, 0.42), rgba(34, 211, 238, 0.28));
+  border: 1px solid rgba(129, 140, 248, 0.55);
   border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.22);
 }
+
+/* Die Karten einer Reihe bekommen abwechselnd einen eigenen Farbstich,
+   damit eine Kartengruppe nicht als eine einzige graue Flaeche wirkt. */
+.cards .card:nth-child(3n + 1) .icon {
+  background: linear-gradient(155deg, rgba(99, 102, 241, 0.45), rgba(129, 140, 248, 0.25));
+  border-color: rgba(129, 140, 248, 0.6);
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.25);
+}
+
+.cards .card:nth-child(3n + 2) .icon {
+  background: linear-gradient(155deg, rgba(34, 211, 238, 0.4), rgba(103, 232, 249, 0.22));
+  border-color: rgba(103, 232, 249, 0.55);
+  box-shadow: 0 6px 18px rgba(34, 211, 238, 0.22);
+}
+
+.cards .card:nth-child(3n + 3) .icon {
+  background: linear-gradient(155deg, rgba(139, 92, 246, 0.42), rgba(167, 139, 250, 0.24));
+  border-color: rgba(167, 139, 250, 0.55);
+  box-shadow: 0 6px 18px rgba(139, 92, 246, 0.25);
+}
+
+.cards .card:nth-child(3n + 1) { border-top: 2px solid rgba(129, 140, 248, 0.5); }
+.cards .card:nth-child(3n + 2) { border-top: 2px solid rgba(103, 232, 249, 0.5); }
+.cards .card:nth-child(3n + 3) { border-top: 2px solid rgba(167, 139, 250, 0.5); }
+
+.cards .card:nth-child(3n + 1):hover { border-color: rgba(129, 140, 248, 0.7); }
+.cards .card:nth-child(3n + 2):hover { border-color: rgba(103, 232, 249, 0.7); }
+.cards .card:nth-child(3n + 3):hover { border-color: rgba(167, 139, 250, 0.7); }
 
 .card .icon svg,
 .contact-detail .icon svg {
@@ -922,6 +971,28 @@ main > section.hero {
   background: var(--surface);
   border: 1px solid var(--border);
   transition: transform 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+
+/* Die vier Prozessschritte bekommen je eine eigene Farbe, damit der Ablauf
+   sichtbar voranschreitet statt als gleichfoermige Reihe zu wirken. */
+.step:nth-child(1) {
+  background: linear-gradient(160deg, rgba(99, 102, 241, 0.14), rgba(99, 102, 241, 0.03));
+  border-color: rgba(129, 140, 248, 0.42);
+}
+
+.step:nth-child(2) {
+  background: linear-gradient(160deg, rgba(79, 158, 245, 0.14), rgba(79, 158, 245, 0.03));
+  border-color: rgba(96, 178, 250, 0.42);
+}
+
+.step:nth-child(3) {
+  background: linear-gradient(160deg, rgba(34, 211, 238, 0.13), rgba(34, 211, 238, 0.03));
+  border-color: rgba(103, 232, 249, 0.42);
+}
+
+.step:nth-child(4) {
+  background: linear-gradient(160deg, rgba(139, 92, 246, 0.14), rgba(139, 92, 246, 0.03));
+  border-color: rgba(167, 139, 250, 0.42);
 }
 
 .step:hover {
