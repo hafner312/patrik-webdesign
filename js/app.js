@@ -280,3 +280,27 @@ if (contactForm) {
     }
   });
 }
+
+// Cookie-Hinweis: einmalig anzeigen, Entscheidung lokal merken
+const cookieBanner = document.getElementById('cookieBanner');
+const cookieAccept = document.getElementById('cookieAccept');
+
+if (cookieBanner) {
+  let alreadyAccepted = false;
+  try {
+    alreadyAccepted = localStorage.getItem('cookieBannerAccepted') === 'true';
+  } catch (e) {}
+
+  if (!alreadyAccepted) {
+    cookieBanner.hidden = false;
+  }
+
+  if (cookieAccept) {
+    cookieAccept.addEventListener('click', () => {
+      cookieBanner.hidden = true;
+      try {
+        localStorage.setItem('cookieBannerAccepted', 'true');
+      } catch (e) {}
+    });
+  }
+}
