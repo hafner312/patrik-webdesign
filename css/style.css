@@ -60,9 +60,9 @@
 }
 
 :root {
-  --bg-0: #0B0D12;
-  --bg-1: #0E1016;
-  --bg-2: #14161F;
+  --bg-0: #151823;
+  --bg-1: #1A1E2B;
+  --bg-2: #222736;
   --color-indigo: #6366F1;
   --color-indigo-light: #818CF8;
   --color-violet: #8B5CF6;
@@ -71,17 +71,17 @@
 
   --text: #EAECF5;
   --text-body: #A6AEC6;
-  --text-muted: #737B9A;
+  --text-muted: #8B93B2;
 
-  --surface: rgba(255, 255, 255, 0.035);
-  --surface-2: rgba(255, 255, 255, 0.06);
-  --border: rgba(255, 255, 255, 0.09);
+  --surface: rgba(255, 255, 255, 0.055);
+  --surface-2: rgba(255, 255, 255, 0.085);
+  --border: rgba(255, 255, 255, 0.13);
   --border-glow: rgba(129, 140, 248, 0.4);
 
   --grad-brand: linear-gradient(115deg, #818CF8 0%, #22D3EE 100%);
   --grad-brand-soft: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(34, 211, 238, 0.85));
   --grad-line: linear-gradient(90deg, transparent, rgba(129, 140, 248, 0.7), transparent);
-  --glass: linear-gradient(165deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.015));
+  --glass: linear-gradient(165deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.03));
 
   --shadow-soft: 0 12px 36px rgba(5, 8, 20, 0.5);
   --shadow-lift: 0 26px 60px rgba(4, 6, 18, 0.65);
