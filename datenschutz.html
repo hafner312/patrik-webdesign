@@ -87,10 +87,10 @@
 
       <h2>Cookies &amp; Tracking</h2>
       <p>
-        Diese Webseite verwendet aktuell keine Analyse-Tools wie Google Analytics und kein Retargeting. Eingesetzt wird das <strong>Google-Ads-Conversion-Tracking</strong> (Google Tag), um zu messen, ob Besucher, die über eine Google-Anzeige auf diese Seite gelangt sind, anschliessend das Kontaktformular absenden. Dabei kann ein Cookie gesetzt und eine gekürzte technische Kennung an Google (Google Ireland Limited) übermittelt werden. Es werden keine Namen, E-Mail-Adressen oder Formularinhalte an Google übertragen.
+        Diese Webseite verwendet aktuell keine Analyse-Tools wie Google Analytics und kein Retargeting. Optional eingesetzt wird das <strong>Google-Ads-Conversion-Tracking</strong> (Google Tag), um zu messen, ob Besucher, die über eine Google-Anzeige auf diese Seite gelangt sind, anschliessend das Kontaktformular absenden. Das zugehörige Skript wird <strong>erst geladen, wenn Sie im Cookie-Hinweis auf „Akzeptieren" klicken</strong>; bei „Ablehnen" oder ohne Auswahl bleibt es deaktiviert. Ist es aktiv, kann ein Cookie gesetzt und eine gekürzte technische Kennung an Google (Google Ireland Limited) übermittelt werden. Es werden keine Namen, E-Mail-Adressen oder Formularinhalte an Google übertragen.
       </p>
       <p>
-        Wenn Sie das nicht wünschen, können Sie das entsprechende Cookie in Ihren Browsereinstellungen blockieren oder löschen, oder unter <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">myaccount.google.com/data-and-privacy</a> die Personalisierung von Google-Anzeigen deaktivieren.
+        Ihre Auswahl wird lokal in Ihrem Browser gespeichert und beim nächsten Besuch nicht erneut abgefragt. Sie können die Entscheidung jederzeit ändern, indem Sie den gespeicherten Wert in den Browsereinstellungen (lokaler Speicher/„Local Storage") für diese Seite löschen, oder unter <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">myaccount.google.com/data-and-privacy</a> die Personalisierung von Google-Anzeigen deaktivieren.
       </p>
       <p>
         Sollten zukünftig weitere, nicht notwendige Cookies, Analyse- oder Retargeting-Dienste eingesetzt werden, wird diese Datenschutzerklärung entsprechend angepasst.
@@ -131,7 +131,10 @@
 <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie-Hinweis" hidden>
   <div class="cookie-banner-inner">
     <p>Diese Webseite nutzt Google Ads Conversion-Tracking, um zu messen, ob Besucher über eine Anzeige das Kontaktformular absenden. Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
-    <button type="button" class="btn btn-primary" id="cookieAccept">Verstanden</button>
+    <div class="cookie-banner-actions">
+      <button type="button" class="btn btn-primary" id="cookieAccept">Akzeptieren</button>
+      <button type="button" class="btn btn-outline" id="cookieDecline">Ablehnen</button>
+    </div>
   </div>
 </div>
 

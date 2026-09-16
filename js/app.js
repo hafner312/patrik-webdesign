@@ -281,17 +281,39 @@ if (contactForm) {
   });
 }
 
-// Cookie-Hinweis: einmalig anzeigen, Entscheidung lokal merken
+// Google Ads Conversion-Tag: wird NICHT statisch im HTML geladen, sondern erst
+// hier, und nur nach ausdruecklicher Zustimmung. Vor der Zustimmung existiert
+// window.gtag schlicht nicht, darum bleibt der bestehende `typeof gtag === 'function'`-
+// Check beim Formular-Versand automatisch stumm.
+const GOOGLE_ADS_ID = 'AW-18422436335';
+
+function loadGoogleAdsTag() {
+  if (window.gtag) return;
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`;
+  document.head.appendChild(script);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', GOOGLE_ADS_ID);
+}
+
+// Cookie-/Consent-Hinweis: einmalig anzeigen, Entscheidung lokal merken.
+// Nur bei "Akzeptieren" wird das Google-Ads-Tag ueberhaupt nachgeladen.
 const cookieBanner = document.getElementById('cookieBanner');
 const cookieAccept = document.getElementById('cookieAccept');
+const cookieDecline = document.getElementById('cookieDecline');
 
 if (cookieBanner) {
-  let alreadyAccepted = false;
+  let consentChoice = null;
   try {
-    alreadyAccepted = localStorage.getItem('cookieBannerAccepted') === 'true';
+    consentChoice = localStorage.getItem('cookieConsent');
   } catch (e) {}
 
-  if (!alreadyAccepted) {
+  if (consentChoice === 'accepted') {
+    loadGoogleAdsTag();
+  } else if (consentChoice !== 'declined') {
     cookieBanner.hidden = false;
   }
 
@@ -299,7 +321,17 @@ if (cookieBanner) {
     cookieAccept.addEventListener('click', () => {
       cookieBanner.hidden = true;
       try {
-        localStorage.setItem('cookieBannerAccepted', 'true');
+        localStorage.setItem('cookieConsent', 'accepted');
+      } catch (e) {}
+      loadGoogleAdsTag();
+    });
+  }
+
+  if (cookieDecline) {
+    cookieDecline.addEventListener('click', () => {
+      cookieBanner.hidden = true;
+      try {
+        localStorage.setItem('cookieConsent', 'declined');
       } catch (e) {}
     });
   }
