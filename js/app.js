@@ -304,3 +304,26 @@ if (cookieBanner) {
     });
   }
 }
+
+// Nach-oben-Button: erscheint erst, wenn spuerbar gescrollt wurde
+const scrollTopBtn = document.getElementById('scrollTop');
+
+if (scrollTopBtn) {
+  scrollTopBtn.hidden = false;
+
+  const toggleScrollTop = () => {
+    if (window.scrollY > 600) {
+      scrollTopBtn.classList.add('is-visible');
+    } else {
+      scrollTopBtn.classList.remove('is-visible');
+    }
+  };
+
+  toggleScrollTop();
+  window.addEventListener('scroll', toggleScrollTop, { passive: true });
+
+  scrollTopBtn.addEventListener('click', () => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+  });
+}
