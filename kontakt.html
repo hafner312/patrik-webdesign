@@ -95,6 +95,14 @@
           Formularversand über EmailJS (kostenlos bis 200 E-Mails/Monat, sendet über den
           verbundenen Gmail-Account). Service/Template werden in js/app.js referenziert.
         -->
+        <div class="notice booked-notice" id="bookedNotice" hidden>
+          <span class="notice-icon">?</span>
+          <div>
+            <h3>Aktuell ausgebucht</h3>
+            <p class="booked-text"></p>
+          </div>
+        </div>
+
         <form id="contactForm">
           <input type="hidden" name="paket" id="paketField" value="">
           <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">

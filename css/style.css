@@ -1584,6 +1584,24 @@ main > section.hero {
   color: var(--text);
 }
 
+.booked-notice--full {
+  background: linear-gradient(150deg, rgba(251, 146, 60, 0.16), rgba(251, 146, 60, 0.05));
+  border-color: rgba(251, 146, 60, 0.35);
+}
+
+.booked-notice--full .notice-icon svg {
+  stroke: #FB923C;
+}
+
+.booked-notice--available {
+  background: linear-gradient(150deg, rgba(52, 211, 153, 0.16), rgba(52, 211, 153, 0.05));
+  border-color: rgba(52, 211, 153, 0.35);
+}
+
+.booked-notice--available .notice-icon svg {
+  stroke: #34D399;
+}
+
 /* ---------- Leistungsumfang (Das mache ich / nicht) ---------- */
 
 .scope-grid {

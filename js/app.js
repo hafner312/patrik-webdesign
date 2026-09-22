@@ -1,3 +1,15 @@
+// Auslastungs-Hinweis auf der Kontaktseite: manuell umschalten, um Besucher
+// ehrlich ueber die aktuelle Kapazitaet zu informieren. Das Formular bleibt in
+// jedem Zustand nutzbar, es ist nur ein Hinweis, keine Sperre.
+// CONTACT_STATUS moegliche Werte:
+//   'normal'    - kein Hinweis (Standard)
+//   'available' = Hinweis "begrenzte Kapazitaet fuer neue Projekte"
+//   'booked'    = Hinweis "aktuell ausgebucht", bittet trotzdem ums Schreiben
+// CONTACT_AVAILABLE_FROM: nur bei 'booked' relevant, Text fuer "wieder
+//   verfuegbar ab ..." (z.B. "Januar 2027"). Leer lassen ('') ohne Datum.
+const CONTACT_STATUS = 'normal';
+const CONTACT_AVAILABLE_FROM = '';
+
 // Mobile navigation toggle
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
@@ -358,4 +370,30 @@ if (scrollTopBtn) {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
   });
+}
+
+// Auslastungs-Hinweis anzeigen, falls oben aktiviert (siehe CONTACT_STATUS)
+const bookedNotice = document.getElementById('bookedNotice');
+
+if (bookedNotice && CONTACT_STATUS !== 'normal') {
+  const titleEl = bookedNotice.querySelector('h3');
+  const textEl = bookedNotice.querySelector('.booked-text');
+
+  if (CONTACT_STATUS === 'booked') {
+    bookedNotice.classList.add('booked-notice--full');
+    if (titleEl) titleEl.textContent = 'Aktuell ausgebucht';
+    if (textEl) {
+      textEl.textContent = CONTACT_AVAILABLE_FROM
+        ? `Aktuell habe ich keine freien Kapazitäten für neue Projekte und nehme wieder ab ${CONTACT_AVAILABLE_FROM} an. Bitte schreiben Sie mir trotzdem über das Kontaktformular – ich melde mich bei Ihnen, sobald wieder Platz ist.`
+        : 'Aktuell habe ich keine freien Kapazitäten für neue Projekte. Bitte schreiben Sie mir trotzdem über das Kontaktformular – ich melde mich bei Ihnen, sobald wieder Platz ist.';
+    }
+    bookedNotice.hidden = false;
+  } else if (CONTACT_STATUS === 'available') {
+    bookedNotice.classList.add('booked-notice--available');
+    if (titleEl) titleEl.textContent = 'Begrenzte Kapazität';
+    if (textEl) {
+      textEl.textContent = 'Ich nehme aktuell eine begrenzte Anzahl neuer Projekte an. Wenn Sie zeitnah starten möchten, empfehle ich eine frühzeitige Anfrage über das Kontaktformular.';
+    }
+    bookedNotice.hidden = false;
+  }
 }
