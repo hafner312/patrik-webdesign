@@ -1589,6 +1589,11 @@ main > section.hero {
   margin: 0;
 }
 
+/* Ohne das schlaegt `display: flex` der .notice-Basisklasse das hidden-Attribut */
+.booked-notice[hidden] {
+  display: none;
+}
+
 .booked-notice--full {
   background: linear-gradient(150deg, rgba(251, 146, 60, 0.16), rgba(251, 146, 60, 0.05));
   border-color: rgba(251, 146, 60, 0.35);
