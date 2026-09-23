@@ -1584,6 +1584,11 @@ main > section.hero {
   color: var(--text);
 }
 
+.booked-notice {
+  max-width: none;
+  margin: 0;
+}
+
 .booked-notice--full {
   background: linear-gradient(150deg, rgba(251, 146, 60, 0.16), rgba(251, 146, 60, 0.05));
   border-color: rgba(251, 146, 60, 0.35);
@@ -1862,6 +1867,12 @@ main > section.hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
+}
+
+.contact-form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .contact-info h3 {
